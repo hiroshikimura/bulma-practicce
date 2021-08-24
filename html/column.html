@@ -1,0 +1,414 @@
+<html>
+<header>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-slace=1">
+  <title>hello bulma</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="bulma-docs.min.css">
+  <script src="https://kit.fontawesome.com/69cbf2aa6c.js" crossorigin="anonymous"></script>
+  <style>
+    code {
+      background-color: #f5f5f5;
+      color: #de1039;
+      font-size: .875em;
+      font-weight: 400;
+      padding: .25em .5em .25em;
+    }
+    strong {
+      color: #363636;
+      font-weight: 700;
+    }
+    .bd-notification code,
+    .bd-notification pre {
+      background-color: rgba(10,10,10,.2);
+      border-radius: .375em;
+      color: white;
+    }
+    .blocking {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border-width: medium;
+      border-color: darkblue;
+      background-color: lightcyan;
+    }
+    .bd-notification {
+      border-radius: .375em;
+      color: #7a7a7a;
+      font-weight: 600;
+      padding: 1.25rem 0;
+      position: relative;
+      text-align: center;
+    }
+    .bd-notification.is-primary {
+      background-color: #00d1b2;
+      color: white;
+    }
+    .bd-notification.is-info {
+      background-color: #3e8ed0;
+      color: white;
+    }
+    .bd-notification.is-danger {
+      background-color: #f14668;
+      color: white;
+    }
+
+    .bd-klmn-gaps {
+      aligh-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-bottom: 1.25rem;
+    }
+    .bd-klmn-label {
+      margin: .25rem auto .25rem 0;
+    }
+    .bd-klmn-gap, .bd-klmn-value {
+      background-color: #202020;
+      border-radius: .375em;
+      color: orange;
+      font-family: monospace;
+      font-size: .75rem;
+      margin: .25rem 0 .25rem .5rem;
+      padding: .375em .75em;
+      text-align: center;
+      vertical-align: middle!important;
+      white-space: nowrap;
+    }
+  </style>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(){
+      document.querySelectorAll('.gap-selector a').forEach(function(el){
+        el.addEventListener('mouseenter', function(e){
+          let list = Array.from(document.querySelectorAll('.gap-selector a')).map(function(el){return el.getAttribute('data-value')});
+          let target = document.querySelector('#variable-gap-container');
+          let display = document.querySelector('.gap-selector code.bd-klmn-value#klmnValue');
+          list.forEach(function(f){target.classList.remove('is-' + f)});
+          target.classList.add('is-' + e.currentTarget.getAttribute('data-value'));
+          display.innerText = "is-" + e.currentTarget.getAttribute('data-value');
+        });
+      });
+    });
+  </script>
+</header>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">hello world</h1>
+      <p class="subtitle">my first website with <strong>Bulma</strong>!</p>
+
+      <p class="subtitle">column basics</p>
+      <div class="columns" style="background-color: darkgray;">
+        <div class="column is-1" style="background-color: gray"><code>is-1</code></div>
+        <div class="column is-11" style="background-color: lightgray"><code>is-11</code></div>
+      </div>
+      <div class="columns" style="background-color: darkgray;">
+        <div class="column is-offset-1 is-1" style="background-color: gray"><code>is-1</code></div>
+        <div class="column is-10" style="background-color: lightgray"><code>is-11</code></div>
+      </div>
+
+      <p class="subtitle">narrow and flexible</p>
+      <div class="columns blocking">
+        <div class="column is-narrow">
+          <div class="box" style="width: 200px;">
+            <p class="title is-5">Narrow column</p>
+            <p class="subtitle">This columns is only 200px width.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <p class="title is-5">Flexible column</p>
+            <p class="subtitle">This column will take up the remaining space available.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="subtitle">breakpoints</p>
+      <div class="blocking columns is-tablet is-touch is-widescreen is-fullhd is-mobile is-desktop">
+        <div class="column"><p class="bd-notification is-primary">1</p></div>
+        <div class="column"><p class="bd-notification is-primary">2</p></div>
+        <div class="column"><p class="bd-notification is-primary">3</p></div>
+        <div class="column"><p class="bd-notification is-primary">4</p></div>
+      </div>
+
+      <p class="subtitle">responsive column width</p>
+      <div class="blocking columns is-tablet is-touch is-widescreen is-fullhd is-mobile is-desktop">
+        <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+          <p class="bd-notification is-primary">
+            <code>is-three-quarters-mobile</code><br>
+            <code>is-two-thirds-tablet</code><br>
+            <code>is-half-desktop</code><br>
+            <code>is-one-third-widescreen</code><br>
+            <code>is-one-quarter-fullhd</code>
+          </p>
+        </div>      
+        <div class="column"><p class="bd-notification is-primary">2</p></div>
+        <div class="column"><p class="bd-notification is-primary">3</p></div>
+        <div class="column"><p class="bd-notification is-primary">4</p></div>
+        <div class="column"><p class="bd-notification is-primary">5</p></div>
+      </div>
+
+      <p class="subtitle">nested columns</p>
+      <div class="columns blocking">
+        <div class="column">
+          <p class="bd-notification is-info">First column</p>
+          <div class="columns is-mobile">
+            <div class="column">
+              <p class="bd-notification is-info">First nested column</p>
+            </div>
+            <div class="column">
+              <p class="bd-notification is-info">Second nested column</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-danger">Second column</p>
+          <div class="columns is-mobile">
+            <div class="column is-half-mobile is-half-tablet is-8-desktop">
+              <p class="bd-notification is-danger">50%</p>
+            </div>
+            <div class="column">
+              <p class="bd-notification is-danger">Auto</p>
+            </div>
+            <div class="column">
+              <p class="bd-notification is-danger">Auto</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-gapless blocking">
+        <div class="column">
+          <p class="bd-notification is-primary">No gap</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">No gap</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">No gap</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">No gap</p>
+        </div>
+      </div>
+
+      <p class="subtitle">no gap</p>
+      <div class="columns is-gapless is-multiline is-mobile blocking">
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+
+        <div class="column is-half">
+          <p class="bd-notification is-primary">is-half</p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">Auto</p>
+        </div>
+      </div>
+
+      <p class="subtitle">variable gap</p>
+      <div class="bd-klmn-gaps gap-selector">
+        <strong class="bd-klmn-label">Gap: <code id="klmnValue" class="bd-klmn-value">is-2</code></strong>
+        <a class="bd-klmn-gap bd-is-selected" data-value="0">is-0</a>
+        <a class="bd-klmn-gap" data-value="1">is-1</a>
+        <a class="bd-klmn-gap" data-value="2">is-2</a>
+        <a class="bd-klmn-gap" data-value="3">is-3</a>
+        <a class="bd-klmn-gap" data-value="4">is-4</a>
+        <a class="bd-klmn-gap" data-value="5">is-5</a>
+        <a class="bd-klmn-gap" data-value="6">is-6</a>
+        <a class="bd-klmn-gap" data-value="7">is-7</a>
+        <a class="bd-klmn-gap" data-value="8">is-8</a>
+      </div>
+      <div class="blocking columns is-variable is-multiline is-mobile is-2" id="variable-gap-container">
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+
+        <div class="column is-half">
+          <p class="bd-notification is-primary">is-half</p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary">is-one-quarter</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">Auto</p>
+        </div>
+      </div>
+
+      <p class="subtitle">Breakpoint based column gaps</p>
+      <div class="columns blocking is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
+        <div class="column">
+          <p class="bd-notification is-primary">Column</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">Column</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">Column</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">Column</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">Column</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">Column</p>
+        </div>
+      </div>
+
+      <p class="subtitle">vertical alignment(.is-vcentered)</p>
+      <div class="blocking columns is-vcentered">
+        <div class="column is-8">
+          <p class="bd-notification is-primary">First column</p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">Second column with more content. This is so you can see the vertical alignment.</p>
+        </div>
+      </div>
+
+      <p class="subtitle">Multiline(is-multiline)</p>
+      <div class="columns is-multiline is-mobile blocking">
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary"><code>is-one-quarter</code></p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary"><code>is-one-quarter</code></p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary"><code>is-one-quarter</code></p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary"><code>is-one-quarter</code></p>
+        </div>
+        <div class="column is-half">
+          <p class="bd-notification is-primary"><code>is-half</code></p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary"><code>is-one-quarter</code></p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary"><code>is-one-quarter</code></p>
+        </div>
+        <div class="column is-one-quarter">
+          <p class="bd-notification is-primary"><code>is-one-quarter</code></p>
+        </div>
+        <div class="column">
+          <p class="bd-notification is-primary">Auto</p>
+        </div>
+      </div>
+
+      <p class="subtitle">centerling columns</p>
+      <div class="columns is-mobile is-centered blocking">
+        <div class="column is-half">
+          <p class="bd-notification is-primary">
+            <code class="html">is-half</code>
+          </p>
+        </div>
+      </div>
+      <div class="columns is-mobile is-multiline is-centered blocking">
+        <div class="column is-narrow">
+          <p class="bd-notification is-primary">
+            <code class="html">is-narrow</code><br>
+            First Column
+          </p>
+        </div>
+        <div class="column is-narrow">
+          <p class="bd-notification is-primary">
+            <code class="html">is-narrow</code><br>
+            Our Second Column
+          </p>
+        </div>
+        <div class="column is-narrow">
+          <p class="bd-notification is-primary">
+            <code class="html">is-narrow</code><br>
+            Third Column
+          </p>
+        </div>
+        <div class="column is-narrow">
+          <p class="bd-notification is-primary">
+            <code class="html">is-narrow</code><br>
+            The Fourth Column
+          </p>
+        </div>
+        <div class="column is-narrow">
+          <p class="bd-notification is-primary">
+            <code class="html">is-narrow</code><br>
+            Fifth Column
+          </p>
+        </div>
+      </div>
+
+      <div class="columns blocking">
+        <div class="column">
+          <button class="button">
+            Button
+          </button>
+          
+          <button class="button is-primary">
+            Primary button
+          </button>
+          
+          <button class="button is-large">
+            Large button
+          </button>
+          
+          <button class="button is-loading">
+            Loading button
+          </button>
+        </div>
+      </div>
+      <div class="columns blocking">
+        <div class="column">
+          <a class="button is-primary is-small" disabled>
+            Button
+          </a>
+          <a class="button is-info is-loading">
+            Button
+          </a>
+          <a class="button is-danger is-outlined is-large">
+            Button
+          </a>
+          <a class="button is-info is-loading is-outlined is-large">
+            Button
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

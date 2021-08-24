@@ -1,0 +1,350 @@
+<html>
+<header>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-slace=1">
+  <title>hello bulma</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="bulma-docs.min.css">
+  <script src="https://kit.fontawesome.com/69cbf2aa6c.js" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(){
+      document.querySelectorAll('.gap-selector a').forEach(function(el){
+        el.addEventListener('mouseenter', function(e){
+          let list = Array.from(document.querySelectorAll('.gap-selector a')).map(function(el){return el.getAttribute('data-value')});
+          let target = document.querySelector('#variable-gap-container');
+          let display = document.querySelector('.gap-selector code.bd-klmn-value#klmnValue');
+          list.forEach(function(f){target.classList.remove('is-' + f)});
+          target.classList.add('is-' + e.currentTarget.getAttribute('data-value'));
+          display.innerText = "is-" + e.currentTarget.getAttribute('data-value');
+        });
+      });
+    });
+  </script>
+</header>
+<body>
+  <section class="section">
+    <div class="container">
+      
+      <p class="subtitle">Block</p>
+      <div class="block">
+        This text is within a <strong>block</strong>.
+      </div>
+      <div class="block">
+        This text is within a <strong>second block</strong>.
+      </div>
+      <div class="block">
+        This text is within a <strong>third block</strong>.
+      </div>
+
+      <div>
+        This text is <em>not</em> within a <strong>block</strong>.
+      </div>
+      <div>
+        This text <em>isn't</em> within a <strong>block</strong> either. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+      </div>
+      <div>
+        This text is also <em>not</em> within a <strong>block</strong>.
+      </div>
+
+      <p class="subtitle">Box</p>
+      <div class="box">I'm in a box</div>
+      <form class="box">
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="e.g. alex@example.com">
+          </div>
+        </div>
+      
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="********">
+          </div>
+        </div>
+      
+        <button class="button is-primary">Sign in</button>
+      </form>
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image is-64x64">
+              <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+              </p>
+            </div>
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <a class="level-item" aria-label="reply">
+                  <span class="icon is-small">
+                    <i class="fas fa-reply" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <a class="level-item" aria-label="retweet">
+                  <span class="icon is-small">
+                    <i class="fas fa-retweet" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <a class="level-item" aria-label="like">
+                  <span class="icon is-small">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </article>
+      </div>
+
+      <p class="subtitle">Button</p>
+      <div class="box">
+        <div class="box">
+          <a class="button">anchor</a>
+          <button class="button">button</button>
+          <input class="button" type="submit" value="submit input">
+          <input class="button" type="reset" value="reset input">
+        </div>
+        <div class="box">
+          <a class="button is-link">link</a>
+          <button class="button is-primary">primary</button>
+          <a class="button is-info">info</a>
+          <input class="button is-success" type="submit" value="success">
+          <a class="button is-warning">warning</a>
+          <input class="button is-danger" type="reset" value="danger">
+        </div>
+        <div class="box">
+          <a class="button is-link is-light">link</a>
+          <button class="button is-primary is-light">primary</button>
+          <a class="button is-info is-light">info</a>
+          <input class="button is-success is-light" type="submit" value="success">
+          <a class="button is-warning is-light">warning</a>
+          <input class="button is-danger is-light" type="reset" value="danger">
+        </div>
+        <div class="box">
+          <a class="button is-small">small</a>
+          <a class="button is-default">default</a>
+          <a class="button is-normal">normal</a>
+          <a class="button is-medium">medium</a>
+          <a class="button is-large">large</a>
+        </div>
+        <div class="box buttons are-medium">
+          <a class="button">all</a>
+          <a class="button">medium</a>
+          <a class="button">size</a>
+        </div>
+        <div class="box buttons are-small">
+          <button class="button">Small</button>
+          <button class="button">Small</button>
+          <button class="button">Small</button>
+          <button class="button is-medium">Normal</button>
+          <button class="button">Small</button>
+        </div>
+        <div class="box">
+          <a class="button is-small is-fullwidth">small</a>
+          <a class="button is-default is-fullwidth">default</a>
+          <a class="button is-normal is-fullwidth">normal</a>
+          <a class="button is-medium is-fullwidth">medium</a>
+          <a class="button is-large is-fullwidth">large</a>
+        </div>
+        <div class="box">
+          <a class="button is-outlined">Outlined</a>
+          <a class="button is-outlined is-primary">Outlined</a>
+          <a class="button is-outlined is-link">Outlined</a>
+          <a class="button is-outlined is-info">Outlined</a>
+          <a class="button is-outlined is-success">Outlined</a>
+          <a class="button is-outlined is-warning">Outlined</a>
+          <a class="button is-outlined is-danger">Outlined</a>
+        </div>
+        <div class="box">
+          <a class="button is-inverted">Inverted</a>
+          <a class="button is-inverted is-primary">Inverted</a>
+          <a class="button is-inverted is-link">Inverted</a>
+          <a class="button is-inverted is-info">Inverted</a>
+          <a class="button is-inverted is-success">Inverted</a>
+          <a class="button is-inverted is-warning">Inverted</a>
+          <a class="button is-inverted is-danger">Inverted</a>
+        </div>
+        <div class="box">
+          <a class="button is-inverted is-outlined">Outlined inverted</a>
+          <a class="button is-inverted is-outlined is-primary">Outlined inverted</a>
+          <a class="button is-inverted is-outlined is-link">Outlined inverted</a>
+          <a class="button is-inverted is-outlined is-info">Outlined inverted</a>
+          <a class="button is-inverted is-outlined is-success">Outlined inverted</a>
+          <a class="button is-inverted is-outlined is-warning">Outlined inverted</a>
+          <a class="button is-inverted is-outlined is-danger">Outlined inverted</a>
+        </div>
+        <div class="box">
+          <a class="button is-outlined is-rounded">Outlined</a>
+          <a class="button is-outlined is-rounded is-primary">Outlined</a>
+          <a class="button is-outlined is-rounded is-link">Outlined</a>
+          <a class="button is-outlined is-rounded is-info">Outlined</a>
+          <a class="button is-outlined is-rounded is-success">Outlined</a>
+          <a class="button is-outlined is-rounded is-warning">Outlined</a>
+          <a class="button is-outlined is-rounded is-danger">Outlined</a>
+        </div>
+        <div class="box">
+          <a class="button is-outlined is-rounded is-static">Outlined</a>
+          <a class="button is-outlined is-rounded is-static is-primary">Outlined</a>
+          <a class="button is-outlined is-rounded is-static is-link">Outlined</a>
+          <a class="button is-outlined is-rounded is-static is-info">Outlined</a>
+          <a class="button is-outlined is-rounded is-static is-success">Outlined</a>
+          <a class="button is-outlined is-rounded is-static is-warning">Outlined</a>
+          <a class="button is-outlined is-rounded is-static is-danger">Outlined</a>
+        </div>
+        <div class="box">
+          <a class="button is-outlined is-rounded is-loading">Outlined</a>
+          <a class="button is-outlined is-rounded is-loading is-primary">Outlined</a>
+          <a class="button is-outlined is-rounded is-loading is-link">Outlined</a>
+          <a class="button is-outlined is-rounded is-loading is-info">Outlined</a>
+          <a class="button is-outlined is-rounded is-loading is-success">Outlined</a>
+          <a class="button is-outlined is-rounded is-loading is-warning">Outlined</a>
+          <a class="button is-outlined is-rounded is-loading is-danger">Outlined</a>
+        </div>
+        <div class="box">
+          <a class="button is-outlined is-rounded" disabled>Outlined</a>
+          <a class="button is-outlined is-rounded is-primary" disabled>Outlined</a>
+          <a class="button is-outlined is-rounded is-link" disabled>Outlined</a>
+          <a class="button is-outlined is-rounded is-info" disabled>Outlined</a>
+          <a class="button is-outlined is-rounded is-success" disabled>Outlined</a>
+          <a class="button is-outlined is-rounded is-warning" disabled>Outlined</a>
+          <a class="button is-outlined is-rounded is-danger" disabled>Outlined</a>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <p class="subtitle">Button group</p>
+      <div class="box">
+        <div class="field is-grouped">
+          <p class="control"><button class="button is-link">Save changes</button></p>
+          <p class="control"><button class="button">Cancel</button></p>
+          <p class="control"><button class="button is-danger">Delete post</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <p class="subtitle">Button addons</p>
+      <div class="box">
+        <div class="field has-addons">
+          <p class="control"><button class="button"><span class="icon is-small"><i class="fas fa-align-left"></i></span><span>Left</span></button></p>
+          <p class="control"><button class="button"><span class="icon is-small"><i class="fas fa-align-center"></i></span><span>Center</span></button></p>
+          <p class="control"><button class="button"><span class="icon is-small"><i class="fas fa-align-right"></i></span><span>Right</span></button></p>
+        </div>
+        <div class="field has-addons">
+          <p class="control"><button class="button"><span class="icon is-small"><i class="fas fa-align-left"></i></span><span>Left</span></button></p>
+          <p class="control"><button class="button"><span class="icon is-small"><i class="fas fa-align-center"></i></span><span>Center</span></button></p>
+          <p class="control"><button class="button"><span class="icon is-small"><i class="fas fa-align-right"></i></span><span>Right</span></button></p>
+        </div>
+        <div class="buttons has-addons is-centered">
+          <button class="button"><span class="icon is-small"><i class="fas fa-align-left"></i></span><span>Left</span></button>
+          <button class="button"><span class="icon is-small"><i class="fas fa-align-center"></i></span><span>Center</span></button>
+          <button class="button"><span class="icon is-small"><i class="fas fa-align-right"></i></span><span>Right</span></button>
+        </div>
+        <div class="buttons has-addons">
+          <button class="button">Yes</button>
+          <button class="button is-success is-selected">Maybe</button>
+          <button class="button">No</button>
+        </div>
+        <div class="buttons has-addons">
+          <button class="button">Yes</button>
+          <button class="button">Maybe</button>
+          <button class="button is-danger is-selected">No</button>
+        </div>
+      </div>
+      <div class="box">
+        <p class="subtitle">Delete</p>
+        <div class="box">
+          <button class="delete is-small"></button>
+          <button class="delete"></button>
+          <button class="delete is-medium"></button>
+          <button class="delete is-large"></button>
+        </div>
+        <div class="box">
+          <div class="block">
+            <span class="tag is-success">hello world<button class="delete is-small"></button></span>
+          </div>
+          <div class="notification is-danger">
+            <button class="delete"></button>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </div>
+          <article class="message is-info">
+            <div class="message-header">
+              Info
+              <button class="delete"></button>
+            </div>
+            <div class="message-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="box">
+        <p class="subtitle">Icons</p>
+        <div class="box">
+          <div class="block">
+            <span class="icon"><i class="fas fa-home"></i></span>
+          </div>
+          <div class="block">
+            <span class="icon-text"><span class="icon"><i class="fas fa-home"></i></span><span>Home</span></span>
+          </div>
+          <div class="block">
+            <span class="icon-text">
+              <span class="icon"><i class="fas fa-train"></i></span><span>Paris</span>
+              <span class="icon"><i class="fas fa-arrow-right"></i></span><span>Budapest</span>
+              <span class="icon"><i class="fas fa-arrow-right"></i></span><span>Bucharest</span>
+              <span class="icon"><i class="fas fa-arrow-right"></i></span><span>Istanbul</span>
+              <span class="icon"><i class="fas fa-flag-checkered"></i></span>
+            </span>
+          </div>
+        </div>
+        <div class="block">
+          <span class="icon has-text-info">
+            <i class="fas fa-info-circle"></i>
+          </span>
+          <span class="icon has-text-success">
+            <i class="fas fa-check-square"></i>
+          </span>
+          <span class="icon has-text-warning">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+          <span class="icon has-text-danger">
+            <i class="fas fa-ban"></i>
+          </span>
+        </div>
+        <div class="block">
+          <span class="icon-text has-text-info">
+            <span class="icon">
+              <i class="fas fa-info-circle"></i>
+            </span>
+            <span>info</span>
+          </span>
+          <span class="icon-text has-text-success">
+            <span class="icon">
+              <i class="fas fa-check-square"></i>
+            </span>
+            <span>success</span>
+          </span>
+          <span class="icon-text has-text-warning">
+            <span class="icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+            <span>warning</span>
+          </span>
+          <span class="icon-text has-text-danger">
+            <span class="icon">
+              <i class="fas fa-ban"></i>
+            </span>
+            <span>danger</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
